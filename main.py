@@ -52,6 +52,7 @@ class MyWin(QMainWindow, Ui_MainWindow):
         
         self.sec_win = second_window(self)
         math_part.mathpart.building(self, p, v, y, k, c, u10, u20, eps, d, x0, step)
+        self.sec_win.show()
 
 
 

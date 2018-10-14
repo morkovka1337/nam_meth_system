@@ -49,7 +49,7 @@ class mathpart(Ui_MainWindow):
                     nonlocal step
                     step /= 2
                     return next_point_v(x, v1, v2, step)
-                elif elif abs(s1) < eps/16 and abs(s2) < eps/16:
+                elif abs(s1) < eps/16 and abs(s2) < eps/16:
                     nonlocal step
                     step *= 2
                     return x_new, v1_new, v2_new
@@ -58,6 +58,7 @@ class mathpart(Ui_MainWindow):
                     
             else: 
                 return x_new, v1_new, v2_new
+
         self.progressBar.setMinimum(x0)
         self.progressBar.setMaximum(d)
         ax_1 = self.figure_1.add_subplot(111)
@@ -75,6 +76,8 @@ class mathpart(Ui_MainWindow):
             self.progressBar.setValue(d-x)
             ax_1.plot([x_old, x], [v1_old, v1], '-r')
             ax_2.plot([x_old, x], [v2_old, v2], '-r')
-            
+        ax_1.grid(True)
+        ax_2.grid(True)
+        self.canvas.draw()
         
         
