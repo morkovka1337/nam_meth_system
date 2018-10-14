@@ -2,10 +2,11 @@
 import sys
 import math
 # Импортируем наш интерфейс из файла
-from label_for_graphic import *
+from Form import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from MyMplCanc import MtMplCanv
-import Math_Part
+import math_part
+from NumPy import float64
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from PyQt5 import QtWidgets, QtGui, QtCore
 from MyMplCanc import MtMplCanv
@@ -34,14 +35,18 @@ class MyWin(QMainWindow, Ui_MainWindow):
     # Пока пустая функция которая выполняется
     # при нажатии на кнопку
     def MyFunction(self):
-        #1 вкладка - groupbox 2, 3, 4
-        h = float(self.textEdit_4.toPlainText())
-        n = int(self.textEdit_6.toPlainText())
-        eps = float(self.textEdit_33.toPlainText())
-        b = float(self.textEdit_34.toPlainText())
-        u0 = float(self.textEdit_3.toPlainText())
-        method = self.checkBox.isChecked()
-        Math_Part.Math_Part.bilding(self, n, h, b, u0, method)
+        p = float64(self.textEdit.toPlainText())
+        v = float64(self.textEdit_2.toPlainText())
+        y = float64(self.textEdit_3.toPlainText())
+        k = float64(self.textEdit_4.toPlainText())
+        c = float64(self.textEdit_5.toPlainText())
+
+        u10 = float64(self.textEdit_6.toPlainText())
+        u20 = float64(self.textEdit_7.toPlainText())
+
+        eps = float64(self.textEdit_8.toPlainText())
+
+        math_part.bilding(self, p, v, y, k, c, u10, u20, eps)
 
 
 
