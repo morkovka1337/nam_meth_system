@@ -11,6 +11,7 @@ from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as Navigatio
 from PyQt5 import QtWidgets, QtGui, QtCore
 from MyMplCanc import MtMplCanv
 from matplotlib.figure import Figure
+from tab_widg import *
 class MyWin(QMainWindow, Ui_MainWindow):
 
     def __init__(self, parent=None, *args, **kwargs):
@@ -54,6 +55,10 @@ class MyWin(QMainWindow, Ui_MainWindow):
         math_part.mathpart.building(self, p, v, y, k, c, u10, u20, eps, d, x0, step)
         self.sec_win.show()
 
+class second_window(QMainWindow, Ui_MainWindow_tab):
+    def __init__(self, parent=None, *args, **kwargs):
+        QMainWindow.__init__(self, parent)
+        self.setupUi(self)
 
 
 if __name__=="__main__":
