@@ -41,7 +41,7 @@ class MyWin(QMainWindow, Ui_MainWindow):
         b = float(self.textEdit_34.toPlainText())
         u0 = float(self.textEdit_3.toPlainText())
         method = self.checkBox.isChecked()
-        Math_Part.Math_Part.bilding(self, n, h, eps, b, u0, method)
+        Math_Part.Math_Part.bilding(self, n, h, b, u0, method)
 
 
 
